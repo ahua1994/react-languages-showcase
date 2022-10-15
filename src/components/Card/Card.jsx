@@ -5,7 +5,14 @@ const Card = ({ name, img, options }) => {
     const [flipped, setFlipped] = useState(false);
     const [purpose, year, creator] = options;
     return (
-        <div className="Card" onClick={() => setFlipped(!flipped)}>
+        <div
+            style={{
+                backgroundColor: !flipped ? "rgb(108,99,255)" : "gold",
+                color: !flipped ? "goldenrod" : "brown",
+            }}
+            className="Card"
+            onClick={() => setFlipped(!flipped)}
+        >
             {!flipped ? (
                 <>
                     <img src={img} alt={name} />
